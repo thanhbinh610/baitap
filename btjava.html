@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Join Github</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="main.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        style {
+            display: none;
+        }
+        body {
+            /* font-family:'Courier New', Courier, monospace; */
+            font-size: 20px;
+            padding: 12px;
+            background: #f1f1f1;
+        }
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        /* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .column{
+            float: left;
+            padding: 10px;
+        }
+        .column.side{
+            width: 20%;
+        }
+        .column.middle{
+            width: 60%;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .form {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 30px;
+            margin-top: 80px;
+        }
+        .leftcolumn {   
+            float: left;
+            width: 65%;
+        }
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 35%;
+            background-color: #f1f1f1;
+            padding-left: 20px;
+        }
+        input[type=text], select {
+            width: 100%;
+            height: 40px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            /* width: 100%; */
+            background-color: #4CAF50;
+            color: white;
+            padding: 6px 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 40%;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .text_p {
+            background-color: #FFDCE0;
+            padding: 4px;
+            display: inline;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            border-style:solid;
+            border-width: 1px;
+            border-color: black;
+            color:#800000;
+        }
+        .problem {
+            padding: 10px;
+            background-color: #FFDCE0;
+            border-radius: 10px;
+            border-style:solid;
+            border-width: 1px;
+            border-color: black;
+            color:#800000;
+        }
+    </style>
+    <script>
+        function check(){
+            if(document.getElementById('uname').value==""){
+                document.getElementById('text_uname').innerHTML='<div class="text_p">'+"Login can't be blank</div>";
+                document.getElementById('problem').innerHTML = '<div class="problem">' + "There were problems creating your account.</div>";
+            }
+            if(document.getElementById('email').value==""){
+                document.getElementById('text_email').innerHTML='<div class="text_p">'+"Email can't be blank</div>";
+                document.getElementById('problem').innerHTML = '<div class="problem">' + "There were problems creating your account.</div>";
+            }
+            if (document.getElementById('pass').value == "") {
+                document.getElementById('text_pass').innerHTML = '<div class="text_p">' + "Password can't be blank and is too short (minimum is 7 characters)</div>";
+                document.getElementById('problem').innerHTML = '<div class="problem">' + "There were problems creating your account.</div>";
+            } else if (document.getElementById('pass').value.length < 7) {
+                document.getElementById('text_pass').innerHTML = '<div class="text_p">' + "Password is too short (minimum is 7 characters)</div>";
+                document.getElementById('problem').innerHTML = '<div class="problem">' + "There were problems creating your account.</div>";
+            }
+            if (document.getElementById('uname').value == "" || document.getElementById('email').value == "" || document.getElementById('pass').value == "" || document.getElementById('pass').value.length < 7)
+                return false;
+            else return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#"><img src="https://image.flaticon.com/icons/svg/25/25231.svg" width="25" height="25"></a>
+        <a href="#">Features</a>
+        <a href="#">Explore</a>
+        <a href="#">Marketplace</a>
+        <a href="#">Pricing</a>
+        <a href="#" style="float: right;">Sign in</a>
+        <a href="#" style="float: right;">Sign out</a>
+    </div><br>
+    <div class="row">
+        <div class="column side"></div>
+        <div class="column middle">
+            <h1><b>Join Github</b></h1>      
+            The best way to design, buid, and ship software.<br>
+            <div class="col-xs-4">
+                <img src="https://image.flaticon.com/icons/svg/660/660618.svg" width="30px" height="30px">
+                <b>Step 1:</b><br>
+                Create personal account
+            </div>
+            <div class="col-xs-4">
+                <img src="https://image.flaticon.com/icons/svg/858/858180.svg" width="30px" height="30px">
+                <b>Step 2:</b><br>
+                Choose your plan
+            </div>
+            <div class="col-xs-4">
+                <img src="https://image.flaticon.com/icons/svg/60/60473.svg" width="30px" height="30px">
+                <b>Step 3:</b><br>
+                Tailor your experience
+            </div>
+            <!-- <h3>Create your personal account</h3>
+            <div id="problem"></div> -->
+            <div class="form">
+                <div class="row">
+                    <div class="leftcolumn">
+                            <h3>Create your personal account</h3>
+                            <div id="problem"></div>
+                        <form>
+                            <label for="uname">Username</label><br>
+                            <input type="text" id="uname" name="username" required><br>
+                            <p id="text_uname"><small>This will be your username. You can add the name of your organization later.</small><br></p>
+                            <label for="email">Email address</label><br>
+                            <input type="text" id="email" name="emailadd" required><br>
+                            <p id="text_email"><small>We’ll occasionally send updates about your account to this inbox. We’ll never share your email address with anyone.</small><br></p>
+                            <label for="pass">Password</label><br>
+                            <input type="text" id="pass" name="password" required><br>
+                            <p id="text_pass"><small>Use at least one lowercase letter, one numeral, and seven characters.</small><br></p>
+                            By clicking “Create an account” below, you agree to our <a href="#"> terms of service</a> and <a href="#"> privacy statement</a>. We’ll occasionally send you account related emails.<br>
+                            <input type="submit" value="Create an account" onclick="return check()">
+                        </form>
+                    </div>
+                    <div class="rightcolumn">
+                        <table border="1" >
+                            <tr><td><h3><ul>You’ll love GitHub</ul></h3></td></tr>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <strong>Unlimited</strong> collaborators<br>
+                                            <strong>Unlimited</strong> public repositories
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <i class="material-icons" style="color:#45a049;">check</i>Great communication<br>
+                                            <i class="material-icons" style="color:#45a049;">check</i>Frictionless development<br>
+                                            <i class="material-icons" style="color:#45a049;">check</i>Open source community
+                                        </ul>
+                
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
